@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Amplify from "aws-amplify";
+import Amplify, {Predictions} from "aws-amplify";
 import { AmazonAIPredictionsProvider } from "@aws-amplify/predictions";
 
 import App from "./App";
@@ -12,6 +12,8 @@ import "@reach/dialog/styles.css";
 import amplifyConfig from "./aws-exports";
 
 Amplify.configure(amplifyConfig);
+
+Amplify.register(Predictions);
 Amplify.addPluggable(new AmazonAIPredictionsProvider());
 
 ReactDOM.render(<App />, document.getElementById("root"));

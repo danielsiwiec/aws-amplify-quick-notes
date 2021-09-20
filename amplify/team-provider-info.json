@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-sendpoints-dev-195107-authRole",
+      "UnauthRoleArn": "arn:aws:iam::250251693220:role/amplify-sendpoints-dev-195107-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::250251693220:role/amplify-sendpoints-dev-195107-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-sendpoints-dev-195107-deployment",
+      "UnauthRoleName": "amplify-sendpoints-dev-195107-unauthRole",
+      "StackName": "amplify-sendpoints-dev-195107",
+      "StackId": "arn:aws:cloudformation:us-west-2:250251693220:stack/amplify-sendpoints-dev-195107/58240130-1a3b-11ec-a6fa-06fb5ee41687",
+      "AmplifyAppId": "dc7d2q3q6axmo"
+    },
+    "categories": {
+      "auth": {
+        "quicknotes9506fafe": {}
+      }
+    }
+  }
+}
