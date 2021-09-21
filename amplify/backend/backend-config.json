@@ -1,30 +1,46 @@
 {
-	"auth": {
-		"quicknotes9506fafe": {
-			"service": "Cognito",
-			"providerPlugin": "awscloudformation",
-			"dependsOn": []
-		}
-	},
-	"api": {
-		"quicknotes": {
-			"service": "AppSync",
-			"providerPlugin": "awscloudformation",
-			"output": {
-				"securityType": "AMAZON_COGNITO_USER_POOLS"
-			}
-		}
-	},
-	"predictions": {
-		"transcriptione65259cc": {
-			"providerPlugin": "awscloudformation",
-			"service": "Transcribe",
-			"convertType": "transcription"
-		},
-		"speechGeneratorc72b6c38": {
-			"providerPlugin": "awscloudformation",
-			"service": "Polly",
-			"convertType": "speechGenerator"
-		}
-	}
+  "auth": {
+    "quicknotes9506fafe": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": []
+    }
+  },
+  "api": {
+    "location": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 365,
+              "description": "locationApiKey"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        }
+      }
+    }
+  },
+  "predictions": {
+    "transcriptione65259cc": {
+      "providerPlugin": "awscloudformation",
+      "service": "Transcribe",
+      "convertType": "transcription"
+    },
+    "speechGeneratorc72b6c38": {
+      "providerPlugin": "awscloudformation",
+      "service": "Polly",
+      "convertType": "speechGenerator"
+    }
+  },
+  "hosting": {
+    "amplifyhosting": {
+      "service": "amplifyhosting",
+      "type": "cicd",
+      "lastPushTimeStamp": "2021-09-20T23:36:58.661Z"
+    }
+  }
 }

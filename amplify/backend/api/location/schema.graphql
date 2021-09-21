@@ -1,0 +1,10 @@
+type Location @model {
+  id: ID!
+  name: String!
+  geo: Geo!
+}
+
+type Geo {
+  lat: Float!
+  long: Float!
+}
