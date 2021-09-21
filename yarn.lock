@@ -209,7 +209,7 @@
     "@aws-amplify/core" "4.2.10"
     "@aws-sdk/client-lex-runtime-service" "3.6.1"
 
-"@aws-amplify/predictions@^4.0.6", "@aws-amplify/predictions@4.0.16":
+"@aws-amplify/predictions@4.0.16":
   "integrity" "sha512-qpTFl3uLd6Qu8hSCvMtGCYVNELYKd7h/HanXbCL4DFCs4DhUrQlPNxDIYPfEQcBbp0gLN5YmceWw0Isd8yVz+w=="
   "resolved" "https://registry.npmjs.org/@aws-amplify/predictions/-/predictions-4.0.16.tgz"
   "version" "4.0.16"

@@ -1,11 +1,4 @@
 {
-  "auth": {
-    "quicknotes9506fafe": {
-      "service": "Cognito",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": []
-    }
-  },
   "api": {
     "location": {
       "service": "AppSync",
@@ -22,18 +15,6 @@
           "additionalAuthenticationProviders": []
         }
       }
-    }
-  },
-  "predictions": {
-    "transcriptione65259cc": {
-      "providerPlugin": "awscloudformation",
-      "service": "Transcribe",
-      "convertType": "transcription"
-    },
-    "speechGeneratorc72b6c38": {
-      "providerPlugin": "awscloudformation",
-      "service": "Polly",
-      "convertType": "speechGenerator"
     }
   },
   "hosting": {
