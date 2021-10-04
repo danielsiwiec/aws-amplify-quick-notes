@@ -1,6 +1,6 @@
 {
   "api": {
-    "LocationApi": {
+    "location": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {
@@ -9,19 +9,12 @@
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 365,
-              "description": "LocationApiKey"
+              "description": "locationApiKey"
             }
           },
           "additionalAuthenticationProviders": []
         }
       }
-    }
-  },
-  "hosting": {
-    "amplifyhosting": {
-      "service": "amplifyhosting",
-      "type": "cicd",
-      "lastPushTimeStamp": "2021-09-20T23:36:58.661Z"
     }
   }
 }

@@ -8,10 +8,16 @@ export declare class Geo {
   constructor(init: ModelInit<Geo>);
 }
 
+type LocationMetaData = {
+  readOnlyFields: 'createdAt' | 'updatedAt';
+}
+
 export declare class Location {
   readonly id: string;
   readonly name: string;
   readonly geo: Geo;
-  constructor(init: ModelInit<Location>);
-  static copyOf(source: Location, mutator: (draft: MutableModel<Location>) => MutableModel<Location> | void): Location;
+  readonly createdAt?: string;
+  readonly updatedAt?: string;
+  constructor(init: ModelInit<Location, LocationMetaData>);
+  static copyOf(source: Location, mutator: (draft: MutableModel<Location, LocationMetaData>) => MutableModel<Location, LocationMetaData> | void): Location;
 }

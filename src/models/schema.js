@@ -25,6 +25,22 @@ export const schema = {
                     },
                     "isRequired": true,
                     "attributes": []
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
                 }
             },
             "syncable": true,
@@ -59,5 +75,5 @@ export const schema = {
             }
         }
     },
-    "version": "6ef3e0e6021121d986b34ef08fab7f8f"
+    "version": "f735136c67dae011a1fa4b93cd1418e1"
 };

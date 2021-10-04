@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import { Grid } from '@material-ui/core'
 import ReactGA from 'react-ga'
-import { DataStore } from '@aws-amplify/datastore'
+import { API, graphqlOperation } from 'aws-amplify'
+import {createLocation} from '../graphql/mutations'
 
 import Search from './Search'
 import ViewPlace from './ViewPlace'
 import Hash from './Hash'
-
-import { Location } from '../models/index'
 
 const states = {
   SEARCH: 1,
@@ -78,22 +77,19 @@ export default class Home extends Component {
     this.setState({ state: states.SEARCH })
   }
 
-  onSend () {
+  async onSend () {
     let id = hash()
-    DataStore.save(
-      new Location({
-        id,
-        geo: {
-          lat: this.state.place.lat,
-          long: this.state.place.lng
-        }
-      })
-    ).then(() => {
-      DataStore.query(Location, id).then(loc => {
-        console.log(loc)
-        this.setState({ hash: id })
-        this.setState({ state: states.HASH })
-      })
-    })
+    let newLocation = {
+      id,
+      name: this.state.place.name,
+      geo: {
+        lat: this.state.place.geo.lat,
+        long: this.state.place.geo.lng
+      }
+    }
+    console.log(newLocation)
+    await API.graphql(graphqlOperation(createLocation, {input: newLocation}))
+    this.setState({hash:id})
+    this.setState({ state: states.HASH })
   }
 }
